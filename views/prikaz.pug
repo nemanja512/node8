@@ -1,0 +1,21 @@
+html
+    head 
+    body 
+    if greska 
+        h2=greska 
+    else
+        strong='Naziv proizvoda: '
+        span=proizvod.ime
+        br
+        strong='Cena: '
+        span=proizvod.cena
+        br
+        strong='Količina: '
+        span=proizvod.kolicina
+        br
+        strong='Dobavljač: '
+        span=proizvod.ime_dobavljaca
+        br
+        strong='Kategorija: '
+        span=proizvod.naziv_kategorije
+        br
