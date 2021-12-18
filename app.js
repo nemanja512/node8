@@ -10,7 +10,7 @@ app.set('view engine','pug');
 app.get('/proizvod/:id',function(req,res)
 {
         var id=req.params.id;   
-        let upit = `SELECT pdroizvodi.id,proizvodi.ime,proizvodi.cena,proizvodi.kolicina, dobavljaci.ime as ime_dobavljaca,kategorije.ime as naziv_kategorije FROM proizvodi INNER JOIN dobavljaci ON dobavljaci.id=proizvodi.dobavljac_id INNER JOIN kategorije ON kategorije.id=proizvodi.kategorija_id WHERE proizvodi.id=?`;
+        let upit = `SELECT proizvodi.id,proizvodi.ime,proizvodi.cena,proizvodi.kolicina, dobavljaci.ime as ime_dobavljaca,kategorije.ime as naziv_kategorije FROM proizvodi INNER JOIN dobavljaci ON dobavljaci.id=proizvodi.dobavljac_id INNER JOIN kategorije ON kategorije.id=proizvodi.kategorija_id WHERE proizvodi.id=?`;
         con.query( upit,[id], function(err, rows) 
         {
             if (err)
